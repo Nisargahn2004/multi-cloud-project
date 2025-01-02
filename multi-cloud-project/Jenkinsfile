@@ -1,0 +1,39 @@
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                sh 'npm install'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'npm test'
+            }
+        }
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    docker.build('your-docker-image')
+                }
+            }
+        }
+        stage('Push Docker Image') {
+            steps {
+                script {
+                    docker.withRegistry('https://index.docker.io/v1/', 'dockerhub-credentials') {
+                        docker.image('your-docker-image').push('latest')
+                    }
+                }
+            }
+        }
+        stage('Deploy to Kubernetes') {
+            steps {
+                sh 'kubectl apply -f deployment/kubernetes/deployment.yaml'
+                sh 'kubectl apply -f deployment/kubernetes/service.yaml'
+                sh 'kubectl apply -f deployment/kubernetes/ingress.yaml'
+            }
+        }
+    }
+}
+ 

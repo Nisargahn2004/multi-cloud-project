@@ -1,0 +1,37 @@
+<<<<<<< HEAD
+{
+    "name": "multi-cloud-project",
+    "version": "1.0.0",
+    "description": "Multi-Cloud Project using Docker and Kubernetes",
+    "main": "server.js",
+    "scripts": {
+      "start": "node server/server.js",
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "dependencies": {
+      "express": "^4.17.1",
+      "mongoose": "^5.11.15"
+    },
+    "author": "",
+    "license": "ISC"
+  }
+   
+=======
+{
+    "name": "multi-cloud-project",
+    "version": "1.0.0",
+    "description": "Multi-Cloud Project using Docker and Kubernetes",
+    "main": "server.js",
+    "scripts": {
+      "start": "node server/server.js",
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "dependencies": {
+      "express": "^4.17.1",
+      "mongoose": "^5.11.15"
+    },
+    "author": "",
+    "license": "ISC"
+  }
+   
+>>>>>>> ee6868809825ff5f6ec4db9a605d26209a68dd0b
